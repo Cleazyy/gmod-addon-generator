@@ -8,14 +8,10 @@ set /p table_name=Enter the name of the global table (ex: INFINITY_HUD):
 :: Creating folders ::
 md %addon_name%\lua\autorun
 md %addon_name%\lua\%addon_name%
-md %addon_name%\lua\%addon_name%\client
-md %addon_name%\lua\%addon_name%\server
 
 :: Creating load file ::
 cd %addon_name%/lua/autorun
 set autorun_file=%addon_name%_load.lua
-
-:: Adding the contents of the load file ::
 echo %table_name% = {}> %autorun_file%
 echo.>> %autorun_file%
 echo local function RecursiveLoad(path)>> %autorun_file%
@@ -47,6 +43,19 @@ echo RecursiveLoad("%addon_name%/")>> %autorun_file%
 :: Creating config file ::
 cd ../%addon_name%
 set config_file=sh_config.lua
+set /p answer="Do you want a configuration file? (Y/N)"
+if /i "%answer%"=="Y" (
+	echo %table_name%.CFG = {}> %config_file%
+)
 
-:: Adding the contents of the config file ::
-echo %table_name%.CFG = {}> %config_file%
+:: Creating client folder ::
+set /p answer="Do you want a client folder? (Y/N)"
+if /i "%answer%"=="Y" (
+	mkdir client
+)
+
+:: Creating server folder ::
+set /p answer="Do you want a client folder? (Y/N)"
+if /i "%answer%"=="Y" (
+	mkdir server
+)
