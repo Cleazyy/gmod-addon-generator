@@ -55,7 +55,7 @@ if /i "%answer%"=="Y" (
 )
 
 :: Creating server folder ::
-set /p answer="Do you want a client folder? (Y/N)"
+set /p answer="Do you want a server folder? (Y/N)"
 if /i "%answer%"=="Y" (
 	mkdir server
 )
