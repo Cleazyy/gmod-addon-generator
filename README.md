@@ -7,4 +7,5 @@ A batch script to create the base of a Garry's Mod addon.
 - Move the file in your addons folder.
 
 ### Usage:
-- Double click on the file and answer the questions.
+- Double click on the file.
+- Answer the questions.
