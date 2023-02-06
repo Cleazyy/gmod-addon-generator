@@ -43,19 +43,19 @@ echo RecursiveLoad("%addon_name%/")>> %autorun_file%
 :: Creating config file ::
 cd ../%addon_name%
 set config_file=sh_config.lua
-set /p answer="Do you want a configuration file? (Y/N)"
-if /i "%answer%"=="Y" (
+set /p answer=Do you want a configuration file? (Y/N)
+if /i %answer%==Y (
 	echo %table_name%.CFG = {}> %config_file%
 )
 
 :: Creating client folder ::
-set /p answer="Do you want a client folder? (Y/N)"
-if /i "%answer%"=="Y" (
+set /p answer=Do you want a client folder? (Y/N)
+if /i %answer%==Y (
 	mkdir client
 )
 
 :: Creating server folder ::
-set /p answer="Do you want a server folder? (Y/N)"
-if /i "%answer%"=="Y" (
+set /p answer=Do you want a server folder? (Y/N)
+if /i %answer%==Y (
 	mkdir server
 )
